@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SHADOW VISION // ARCADE</title>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Stylesheet -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+<!-- HEADER -->
+<header class="topbar">
+
+<div class="brand">
+<span class="brand-mark">SV</span>
+
+<div>
+<h1>SHADOW VISION</h1>
+<p>ARCADE TRAINING SYSTEM</p>
+</div>
+</div>
+
+<div class="system-status">
+<span class="status-dot"></span>
+SYSTEM ONLINE
+</div>
+
+</header>
+
+
+<!-- MAIN DASHBOARD -->
+<main class="dashboard">
+
+<!-- CAMERA / GAME SECTION -->
+<section class="camera-section">
+
+<div class="section-heading">
+<span>01 / LIVE FEED</span>
+<span class="live-tag">● STANDBY</span>
+</div>
+
+
+<!-- CAMERA CONTAINER -->
+<div class="camera-container" id="cameraContainer">
+
+<!-- LIVE VIDEO -->
+<video
+id="cameraFeed"
+autoplay
+playsinline
+muted>
+</video>
+
+<!-- POSE TRACKING CANVAS -->
+<canvas id="poseCanvas"></canvas>
+
+<!-- RANDOM TARGETS WILL APPEAR HERE -->
+<div id="targetLayer"></div>
+
+<!-- CAMERA PLACEHOLDER -->
+<div class="camera-placeholder" id="cameraPlaceholder">
+
+<div class="camera-icon">⌗</div>
+
+<h2>AWAITING INPUT</h2>
+
+<p>Camera feed will appear here</p>
+
+</div>
+
+<!-- CAMERA OVERLAY -->
+<div class="camera-overlay">
+
+<span>CAM_01</span>
+
+<span id="trackingStatus">
+POSE TRACKING // OFF
+</span>
+
+</div>
+
+</div>
+
+
+<!-- START BUTTON -->
+<button
+class="start-button"
+id="startButton">
+
+<span>▶</span>
+START SESSION
+
+</button>
+
+</section>
+
+
+
+<!-- PERFORMANCE SECTION -->
+<aside class="stats-section">
+
+<div class="section-heading">
+<span>02 / PERFORMANCE</span>
+<span>LIVE DATA</span>
+</div>
+
+
+<!-- MOVEMENT COUNTER -->
+<div class="stat-card">
+
+<p>TOTAL MOVEMENTS</p>
+
+<h2 id="movementCount">000</h2>
+
+<span>SUCCESSFUL TARGET REACHES</span>
+
+</div>
+
+
+<!-- SESSION TIMER -->
+<div class="stat-card">
+
+<p>SESSION TIME</p>
+
+<h2 id="sessionTime">00:00</h2>
+
+<span>ELAPSED TIME</span>
+
+</div>
+
+
+<!-- ACTIVITY STATUS -->
+<div class="stat-card">
+
+<p>ACTIVITY STATUS</p>
+
+<h2
+class="activity-status"
+id="activityStatus">
+
+IDLE
+
+</h2>
+
+<span>TRACKING STATE</span>
+
+</div>
+
+
+<!-- GAME DIFFICULTY -->
+<div class="stat-card">
+
+<p>GAME SPEED</p>
+
+<h2 id="gameSpeed">1.0x</h2>
+
+<span>TARGET INTERVAL</span>
+
+</div>
+
+
+<!-- SYSTEM DIAGNOSTICS -->
+<div class="system-card">
+
+<p class="system-title">
+SYSTEM DIAGNOSTICS
+</p>
+
+
+<div class="diagnostic">
+
+<span>CAMERA</span>
+
+<span id="cameraStatus">
+OFFLINE
+</span>
+
+</div>
+
+
+<div class="diagnostic">
+
+<span>VISION ENGINE</span>
+
+<span id="visionStatus">
+STANDBY
+</span>
+
+</div>
+
+
+<div class="diagnostic">
+
+<span>TARGET SYSTEM</span>
+
+<span id="targetStatus">
+STANDBY
+</span>
+
+</div>
+
+
+<div class="diagnostic">
+
+<span>BUILD</span>
+
+<span>001.0</span>
+
+</div>
+
+</div>
+
+</aside>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+
+<span>SHADOW VISION © 2026</span>
+
+<span>MOVE. TRACK. IMPROVE.</span>
+
+</footer>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+<script type="module" src="js/app.js"></script>
+
+</body>
+
+</html>

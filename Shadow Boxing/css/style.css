@@ -1,0 +1,356 @@
+:root {
+--background: #090b0a;
+--panel: #111512;
+--border: #252d27;
+--green: #b6ff3b;
+--red: #ff4545;
+--muted: #777f78;
+--white: #e9eee9;
+}
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+background: var(--background);
+color: var(--white);
+font-family: 'Rajdhani', sans-serif;
+min-height: 100vh;
+}
+
+.app {
+max-width: 1500px;
+margin: auto;
+padding: 30px 45px;
+}
+
+.topbar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding-bottom: 25px;
+border-bottom: 1px solid var(--border);
+}
+
+.brand {
+display: flex;
+align-items: center;
+gap: 15px;
+}
+
+.brand-mark {
+content-visibility: 'Orbitron', sans-serif;
+font-size-adjust: 25px;
+font-weight: 800;
+color: var(--green);
+border: 1px solid var(--green);
+padding: 10px;
+}
+
+.brand h1 {
+font-family: 'Orbitron', sans-serif;
+font-size: 19px;
+letter-spacing: 3px;
+}
+
+.brand p,
+.section-heading,
+.stat-card p,
+.stat-card span,
+.system-card,
+footer {
+letter-spacing: 2px;
+}
+
+.brand p {
+font-size: 11px;
+color: var(--muted);
+margin-top: 5px;
+}
+
+.system-status {
+font-size: 13px;
+color: var(--green);
+letter-spacing: 2px;
+}
+
+.status-dot {
+display: inline-block;
+height: 8px;
+width: 8px;
+background: var(--green);
+border-radius: 50%;
+margin-right: 8px;
+}
+
+.dashboard {
+display: grid;
+grid-template-columns: 1.8fr 1fr;
+gap: 25px;
+margin-top: 35px;
+}
+
+.section-heading {
+display: flex;
+justify-content: space-between;
+font-size: 12px;
+color: var(--muted);
+margin-bottom: 15px;
+}
+
+.live-tag {
+color: var(--red);
+}
+
+.camera-container {
+height: 470px;
+background: #0d110e;
+border: 1px solid var(--border);
+position: relative;
+overflow: hidden;
+}
+
+.camera-placeholder {
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+position: relative;
+background-image:
+linear-gradient(#1b241b 1px, transparent 1px),
+linear-gradient(90deg, #1b241b 1px, transparent 1px);
+background-size: 40px 40px;
+}
+
+.camera-icon {
+font-size: 50px;
+color: var(--green);
+margin-bottom: 15px;
+}
+
+.camera-placeholder h2 {
+font-family: 'Orbitron', sans-serif;
+font-size: 19px;
+letter-spacing: 4px;
+}
+
+.camera-placeholder p {
+color: var(--muted);
+margin-top: 10px;
+}
+
+.camera-overlay {
+position: absolute;
+bottom: 15px;
+left: 18px;
+right: 18px;
+display: flex;
+justify-content: space-between;
+color: #000;
+color: var(--green);
+font-size: 11px;
+letter-spacing: 2px;
+}
+
+.start-button {
+width: 100%;
+padding: 18px;
+margin-top: 18px;
+border: none;
+background: var(--green);
+color: #090b0a;
+font-family: 'Orbitron', sans-serif;
+font-weight: 800;
+letter-spacing: 3px;
+cursor: pointer;
+transition: 0.2s;
+}
+
+.start-button:hover {
+background: white;
+box-shadow: 0 0 25px #b6ff3b55;
+}
+
+.stats-section {
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+
+.stat-card,
+.system-card {
+background: var(--panel);
+border: 1px solid var(--border);
+padding: 20px;
+}
+
+.stat-card p {
+font-size: 11px;
+color: var(--muted);
+}
+
+.stat-card h2 {
+font-family: 'Orbitron', sans-serif;
+font-size: 34px;
+color: var(--green);
+margin: 15px 0 8px;
+}
+
+.stat-card span {
+font-size: 10px;
+color: var(--muted);
+}
+
+.stat-card .activity-status {
+color: var(--red);
+font-size: 25px;
+}
+
+.system-title {
+color: var(--green);
+margin-bottom: 15px;
+}
+
+.diagnostic {
+display: flex;
+justify-content: space-between;
+font-size: 13px;
+padding: 7px 0;
+border-bottom: 1px solid var(--border);
+}
+
+.diagnostic span:last-child {
+color: var(--muted);
+}
+
+footer {
+display: flex;
+justify-content: space-between;
+margin-top: 35px;
+padding-top: 20px;
+border-top: 1px solid var(--border);
+color: var(--muted);
+font-size: 11px;
+}
+
+@media (max-width: 850px) {
+.app {
+    padding: 20px;
+}
+
+.dashboard {
+    grid-template-columns: 1fr;
+}
+
+.camera-container {
+    height: 350px;
+}
+
+.brand h1 {
+    font-size: 14px;
+}
+}
+#cameraFeed {
+    display: None;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1);
+}
+.camera-container.camera-active #cameraFeed {
+    display: block;
+}
+.camera-container.camera-active .camera-placeholder {
+    display: none;
+}
+.camera-container.camera-active {
+    border-color: var(--green);
+    box-shadow: 0 0 20px #b6ff3b15;
+}
+#poseCanvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    transform: scaleX(-1);
+    z-index: 2;
+}
+#cameraFeed {
+    position: relative;
+    z-index: 1;
+}
+/* =================================
+   SHADOW VISION - TARGET SYSTEM
+================================= */
+
+.camera-container {
+    position: relative;
+    overflow: hidden;
+}
+
+#targetLayer {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.game-target {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border: 3px solid #b6ff3b;
+    border-radius: 50%;
+    background: rgba(182, 255, 59, 0.12);
+    box-shadow:
+        0 0 12px #b6ff3b,
+        inset 0 0 12px #b6ff3b55;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: targetPulse 0.8s ease-in-out infinite alternate;
+}
+
+.game-target::after {
+    content: "";
+    width: 14px;
+    height: 14px;
+    background: #b6ff3b;
+    border-radius: 50%;
+    box-shadow: 0 0 12px #b6ff3b;
+}
+
+@keyframes targetPulse {
+    from {
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0.7;
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 1;
+    }
+}
+
+/* Target hit feedback */
+
+.game-target.hit {
+    border-color: white;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 25px white;
+    animation: targetHit 0.2s ease-out forwards;
+}
+
+@keyframes targetHit {
+    to {
+        transform: translate(-50%, -50%) scale(1.8);
+        opacity: 0;
+    }
+}
